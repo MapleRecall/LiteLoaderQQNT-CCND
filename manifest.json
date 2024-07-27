@@ -2,16 +2,16 @@
     "$schema": "./manifest_schema.json",
     "manifest_version": 4,
     "type": "extension",
-    "name": "插件模板",
-    "slug": "plugin_template",
-    "description": "LiteLoaderQQNT 的插件模板",
+    "name": "CanCanNeed",
+    "slug": "CanCanNeed",
+    "description": "担心窥屏和社死？快来试试这个吧！还能方便界面演示和截图，美观实用，混沌有趣。",
     "version": "0.1.0",
-    "icon": "./icon.png",
-    "thumb": "./icon.svg",
+    "thumb":"./static/images/icon.svg",
+    "icon": "./static/images/icon.svg",
     "authors": [
         {
-            "name": "LiteLoaderQQNT",
-            "link": "https://github.com/LiteLoaderQQNT"
+            "name": "MapleRecall",
+            "link": "https://github.com/MapleRecall"
         }
     ],
     "platform": [
@@ -25,11 +25,10 @@
         "preload": "./src/preload.js"
     },
     "repository": {
-        "repo": "LiteLoaderQQNT/Plugin-Template",
+        "repo": "MapleRecall/LiteLoaderQQNT-CCND",
         "branch": "main",
         "release": {
-            "tag": "0.1.0",
-            "file": "Plugin-Template.zip"
+            "tag": "0.1.0"
         }
     }
 }

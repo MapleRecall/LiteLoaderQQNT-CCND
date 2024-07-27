@@ -1,0 +1,7 @@
+{
+    "enabled": true,
+    "font": "KFC",
+    "peekOnBody": false,
+    "peekOnContact": true,
+    "peekOnAIO": true
+}

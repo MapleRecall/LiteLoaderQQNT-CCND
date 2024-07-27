@@ -1,0 +1,138 @@
+<style>
+    .ll-ccnd-settings {
+        .font-selector {
+            width: auto;
+        }
+
+        setting-text[data-type="secondary"] svg {
+            height: 20px;
+            vertical-align: bottom;
+        }
+    }
+</style>
+
+<div class="ll-ccnd-settings">
+    <setting-section>
+        <setting-panel class="Main">
+            <setting-list data-direction="column">
+                <setting-item>
+                    <div>
+                        <setting-text>全局开关</setting-text>
+                        <setting-text data-type="secondary">
+                            也可以使用界面右下角的
+                            <svg viewBox="0 0 24 24">
+                                <use
+                                    xlink:href="/_upper_/resource/icons/channel_handup_speech_24.svg#channel_handup_speech_24" />
+                            </svg>
+                            来切换
+                        </setting-text>
+                    </div>
+                    <setting-switch data-config="enabled"></setting-switch>
+                </setting-item>
+            </setting-list>
+        </setting-panel>
+    </setting-section>
+    <setting-section data-title="样式配置">
+        <setting-panel>
+            <setting-list data-direction="column">
+                <setting-item>
+                    <div>
+                        <setting-text>文字混淆模式</setting-text>
+                        <setting-text data-type="secondary">选择你的喜欢的混淆风格</setting-text>
+                    </div>
+                    <setting-select class="font-selector" data-config="font">
+                        <setting-option data-value="">不混淆</setting-option>
+                        <setting-option data-value="Chaos" title="C H A O S">🌀 乱序映射</setting-option>
+                        <setting-option data-value="KFC" title="🍟麦当劳">🍔 狂亂木曜日</setting-option>
+                        <setting-option data-value="KunJinKao" title="AMD全责">🐞 锟斤拷烫囤</setting-option>
+                        <setting-option data-value="Furry" title="😾小心福瑞控">🐶 ♡喵呜~汪oωo</setting-option>
+                        <setting-option data-value="JP" title="全是片假名谁看得懂啊">⚔️ 異世界の伝説</setting-option>
+                        <setting-option data-value="Geek" title="澤野弘之">💥 βios</setting-option>
+                        <setting-option data-value="EN" >🌐 ENGILHS</setting-option>
+                    </setting-select>
+                </setting-item>
+                <setting-item is-disabled>
+                    <div>
+                        <setting-text>头像样式（暂未实现）</setting-text>
+                        <setting-text data-type="secondary">选择头像遮罩的样式</setting-text>
+                    </div>
+                </setting-item>
+                <setting-item is-disabled>
+                    <div>
+                        <setting-text>图片样式（暂未实现）</setting-text>
+                        <setting-text data-type="secondary">选择图片遮罩的样式</setting-text>
+                    </div>
+                </setting-item>
+            </setting-list>
+        </setting-panel>
+    </setting-section>
+    <setting-section data-title="交互配置">
+        <setting-panel>
+            <setting-list data-direction="column">
+                <setting-item>
+                    <div>
+                        <setting-text>概览聊天框</setting-text>
+                        <setting-text data-type="secondary">鼠标在聊天区内时还原全部消息，方便聊天</setting-text>
+                    </div>
+                    <setting-switch data-config="peekOnAIO"></setting-switch>
+                </setting-item>
+                <setting-item>
+                    <div>
+                        <setting-text>概览联系人</setting-text>
+                        <setting-text data-type="secondary">鼠标在最近联系列表中时还原全部列表，方便选取</setting-text>
+                    </div>
+                    <setting-switch data-config="peekOnContact"></setting-switch>
+                </setting-item>
+                <setting-item>
+                    <div>
+                        <setting-text>概览窗口</setting-text>
+                        <setting-text data-type="secondary">鼠标在窗口内时还原整个窗口，会覆盖上面两个的设置</setting-text>
+                    </div>
+                    <setting-switch data-config="peekOnBody"></setting-switch>
+                </setting-item>
+
+
+                <setting-item is-disabled>
+                    <div>
+                        <setting-text>定时隐藏（暂未实现）</setting-text>
+                        <setting-text data-type="secondary">当静置一段时间后自动开启功能</setting-text>
+                    </div>
+                </setting-item>
+            </setting-list>
+        </setting-panel>
+    </setting-section>
+    <setting-section data-title="生效范围（暂未实现）" is-disabled>
+        <setting-panel>
+            <setting-list data-direction="row">
+                <setting-item>
+                    <setting-text>联系人列表</setting-text>
+                    <setting-switch data-config=""></setting-switch>
+                </setting-item>
+                <setting-item>
+                    <setting-text>聊天窗口</setting-text>
+                    <setting-switch data-config=""></setting-switch>
+                </setting-item>
+                <setting-item>
+                    <setting-text>群信息</setting-text>
+                    <setting-switch data-config=""></setting-switch>
+                </setting-item>
+            </setting-list>
+        </setting-panel>
+        <setting-panel>
+            <setting-list data-direction="row">
+                <setting-item>
+                    <setting-text>我的头像</setting-text>
+                    <setting-switch data-config=""></setting-switch>
+                </setting-item>
+                <setting-item>
+                    <setting-text>我的信息</setting-text>
+                    <setting-switch data-config=""></setting-switch>
+                </setting-item>
+                <setting-item>
+                    <setting-text>我发送的消息</setting-text>
+                    <setting-switch data-config=""></setting-switch>
+                </setting-item>
+            </setting-list>
+        </setting-panel>
+    </setting-section>
+</div>

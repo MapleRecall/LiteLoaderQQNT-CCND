@@ -1,7 +1,12 @@
-// 运行在 Electron 渲染进程 下的页面脚本
+import { getConfig } from "./scripts/config.js";
+import onSettingWindowCreated from "./scripts/renderer/settings.js";
+import initStyles from "./scripts/renderer/initStyles.js";
+import initSideButton from "./scripts/renderer/sideButton.js";
 
+(async () => {
+  await getConfig();
+  await initStyles();
+  await initSideButton();
+})();
 
-// 打开设置界面时触发
-export const onSettingWindowCreated = view => {
-    // view 为 Element 对象，修改将同步到插件设置界面
-}
+export { onSettingWindowCreated };

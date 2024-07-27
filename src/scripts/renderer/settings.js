@@ -1,0 +1,28 @@
+import { getConfig, setConfig } from "../config.js";
+
+export default async (view) => {
+  const config = await getConfig();
+  view.innerHTML = await (await fetch(`local:///${LL_CCND.BASE_PATH}/src/settings.html`)).text();
+
+  // Initialize switch
+  [...view.querySelectorAll("setting-switch")].forEach((input) => {
+    const configName = input.dataset["config"];
+    input.toggleAttribute("is-active", config[configName]);
+
+    input.addEventListener("click", async (event) => {
+      event.target.toggleAttribute("is-active");
+      config[configName] = event.target.hasAttribute("is-active");
+      setConfig(config);
+    });
+  });
+
+  [...view.querySelectorAll("setting-select")].forEach((input) => {
+    const configName = input.dataset["config"];
+    input.querySelector(`[data-value="${config.font}"]`)?.click();
+
+    input.addEventListener("selected", async (event) => {
+      config[configName] = event.detail.value;
+      setConfig(config);
+    });
+  });
+};

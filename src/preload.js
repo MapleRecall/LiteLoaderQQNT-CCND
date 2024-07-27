@@ -1,8 +1,8 @@
-// Electron 主进程 与 渲染进程 交互的桥梁
-const { contextBridge } = require("electron");
+const { contextBridge, ipcRenderer } = require("electron");
 
+contextBridge.exposeInMainWorld("LL_CCND", {
+  onUpdate: (callback) => ipcRenderer.on("LiteLoader.ccnd.onUpdate", callback),
+  update: () => ipcRenderer.invoke("LiteLoader.ccnd.update"),
 
-// 在window对象下导出只读对象
-contextBridge.exposeInMainWorld("plugin_template", {
-
+  BASE_PATH: LiteLoader.plugins["CanCanNeed"].path.plugin,
 });
