@@ -1,5 +1,5 @@
 {
-    "enabled": true,
+    "enabled": false,
     "font": "KFC",
     "peekOnBody": false,
     "peekOnContact": true,
