@@ -5,7 +5,7 @@
     "name": "CanCanNeed",
     "slug": "CanCanNeed",
     "description": "担心窥屏和社死？快来试试这个吧！还能方便界面演示和截图，美观实用，混沌有趣。",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "thumb":"./static/images/icon.svg",
     "icon": "./static/images/icon.svg",
     "authors": [
