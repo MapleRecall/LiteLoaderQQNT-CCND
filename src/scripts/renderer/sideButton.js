@@ -14,14 +14,14 @@ export default async () => {
 
       button.classList.add("ll-ccnd-button");
 
-
-
       const updateButton = async () => {
         const config = await getConfig();
         button.querySelector("use").setAttribute("xlink:href", config.enabled ? ENABLE_ICON : DISABLE_ICON);
         button.title = config.enabled ? "不给看" : "看看你的";
+        button.querySelector(".icon-item").setAttribute("aria-label", button.title);
         button.classList.toggle("enabled", config.enabled);
       };
+      
       updateButton();
       LL_CCND.onUpdate(updateButton);
 
