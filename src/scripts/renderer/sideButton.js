@@ -9,7 +9,7 @@ export default async () => {
       const funcMenu = document.querySelector(".func-menu");
       if (!funcMenu) return;
 
-      const button = funcMenu.querySelector(".func-menu__item_wrap")?.cloneNode(true);
+      const button = funcMenu.querySelector(".func-menu__item_wrap:last-child")?.cloneNode(true);
       if (!button) return;
 
       button.classList.add("ll-ccnd-button");
