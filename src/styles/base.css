@@ -3,6 +3,22 @@ body #app {
     visibility: visible;
   }
 
+  --avatar-mask-opacity: 0.8;
+  --avatar-filter: blur(5px) saturate(1.25);
+  --avatar-mix-blend-mode: hard-light;
+
+  --image-opacity: 0.8;
+  --image-filter: blur(10px) saturate(1.25);
+
+  &.ll-ccnd-perfmode {
+    --avatar-mask-opacity: 1;
+    --avatar-filter: none;
+    --avatar-mix-blend-mode: normal;
+
+    --image-opacity: 0;
+    --image-filter: none;
+  }
+
   @keyframes text-in-1 {
     from {
       opacity: 0.75;
@@ -51,10 +67,14 @@ body #app {
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(30deg, hsl(from var(--brand_standard) h 30% 50% / 0.8) 48%, hsl(from var(--brand_standard) h 30% 60% / 0.8) 52%);
-      mix-blend-mode: hard-light;
-      backdrop-filter: blur(5px) saturate(1.25);
-      transition: 0.25s;
+      background: linear-gradient(
+        30deg,
+        hsl(from var(--brand_standard) h 30% 50% / var(--avatar-mask-opacity)) 48%,
+        hsl(from var(--brand_standard) h 30% 60% / var(--avatar-mask-opacity)) 52%
+      );
+      mix-blend-mode: var(--avatar-mix-blend-mode);
+      backdrop-filter: var(--avatar-filter);
+      transition: 0.2s;
     }
 
     :is(.ll-ccnd-peekable, .list-item, .group-user, .ml-item):hover &,
@@ -124,11 +144,12 @@ body #app {
           ),
           url("data:image/svg+xml,%3Csvg%20id%3D%22image_24%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M20.5%204.5H3.5L3.5%2011.313C6.03002%2011.521%208.74007%2012.2415%2010.9607%2013.4302C13.4553%2014.7655%2015.503%2016.7963%2015.7292%2019.5H20.5V4.5ZM2%2011.25V12.75V19.5C2%2020.3284%202.67157%2021%203.5%2021H20.5C21.3284%2021%2022%2020.3284%2022%2019.5V4.5C22%203.67157%2021.3284%203%2020.5%203H3.5C2.67157%203%202%203.67157%202%204.5V11.25ZM10.2528%2014.7526C8.26416%2013.6881%205.80693%2013.0239%203.5%2012.8184L3.5%2019.5H14.2213C13.9997%2017.5832%2012.5086%2015.9602%2010.2528%2014.7526ZM17.5%2010C17.5%2010.8284%2016.8284%2011.5%2016%2011.5C15.1716%2011.5%2014.5%2010.8284%2014.5%2010C14.5%209.17157%2015.1716%208.5%2016%208.5C16.8284%208.5%2017.5%209.17157%2017.5%2010ZM19%2010C19%2011.6569%2017.6569%2013%2016%2013C14.3431%2013%2013%2011.6569%2013%2010C13%208.34315%2014.3431%207%2016%207C17.6569%207%2019%208.34315%2019%2010Z%22%20fill%3D%22%2388888866%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E")
             center no-repeat;
-        transition: 0.25s;
+        transition: 0.2s;
       }
 
       .image-content {
-        filter: blur(10px) saturate(1.25);
+        filter: var(--image-filter);
+        opacity: var(--image-opacity);
         transition: 0.1s;
       }
     }
@@ -142,6 +163,7 @@ body #app {
         .image-content {
           filter: none;
           transform: none;
+          opacity: 1;
           transition: 0s;
         }
       }

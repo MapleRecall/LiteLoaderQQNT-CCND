@@ -29,6 +29,7 @@ export default async () => {
     fontStyle.textContent = getFontStyle(config.font);
 
     document.querySelector("#app")?.classList.toggle("ll-ccnd-peekable", config.peekOnBody);
+    document.querySelector("#app")?.classList.toggle("ll-ccnd-perfmode", config.perfMode);
     document.querySelector(".recent-contact")?.classList.toggle("ll-ccnd-peekable", config.peekOnContact);
     document.querySelector(".aio")?.classList.toggle("ll-ccnd-peekable", config.peekOnAIO);
   };

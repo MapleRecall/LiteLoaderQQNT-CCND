@@ -1,6 +1,7 @@
 {
     "enabled": false,
     "font": "KFC",
+    "perfMode": false,
     "peekOnBody": false,
     "peekOnContact": true,
     "peekOnAIO": true
