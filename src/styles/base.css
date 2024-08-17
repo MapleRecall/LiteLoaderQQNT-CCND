@@ -31,7 +31,7 @@ body #app {
     }
   }
 
-  :is(.text-ellipsis:not(.secondary-info), .text-normal, .msg-content-container, .group-notice .content, .gray-tip-action) {
+  :is(.text-ellipsis:not(.secondary-info), .text-normal, .msg-content-container, .group-notice .content, .gray-tip-action, .card-extra__postscript) {
     font-family: "Messed Sans Pro", sans-serif;
     animation: text-in-1 0.5s;
 
@@ -44,13 +44,15 @@ body #app {
 
   .list-item,
   .group-user,
-  .ml-item {
+  .ml-item,
+  .sys-notify-card {
     &:hover {
       .text-ellipsis:not(.secondary-info),
       .text-normal,
       .msg-content-container,
       .group-notice .content,
-      .gray-tip-action {
+      .gray-tip-action,
+      .card-extra__postscript {
         font-family: inherit;
         animation: text-in-2 0.5s;
       }
@@ -85,7 +87,7 @@ body #app {
     }
   }
 
-  :is(.list-item, .group-user, .ml-item) {
+  :is(.list-item, .group-user, .ml-item, .recent-contact-item) {
     &:nth-child(n) {
       .avatar {
         filter: hue-rotate(-30deg);

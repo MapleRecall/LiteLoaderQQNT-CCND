@@ -1,4 +1,5 @@
 import { getConfig } from "../config.js";
+import { waitForElement } from "../utils.js";
 
 const getFontStyle = (font) => {
   const FONT_PATH = `local:///${LL_CCND.BASE_PATH.replace(/\\/gi, "/")}/static/fonts/${font}.woff2?r=${Date.now()}`;
@@ -27,13 +28,35 @@ export default async () => {
 
     baseStyle.setAttribute("href", `local:///${LL_CCND.BASE_PATH}/src/styles/base.css?r=${Date.now()}`);
     fontStyle.textContent = getFontStyle(config.font);
-
-    document.querySelector("#app")?.classList.toggle("ll-ccnd-peekable", config.peekOnBody);
-    document.querySelector("#app")?.classList.toggle("ll-ccnd-perfmode", config.perfMode);
-    document.querySelector(".recent-contact")?.classList.toggle("ll-ccnd-peekable", config.peekOnContact);
-    document.querySelector(".aio")?.classList.toggle("ll-ccnd-peekable", config.peekOnAIO);
+    updateClass();
   };
+
   updateStyles();
 
   LL_CCND.onUpdate(updateStyles);
+
+  window.navigation.addEventListener("navigate", updateClass);
 };
+
+async function updateClass(e) {
+  const config = await getConfig();
+  if (!config.enabled) return;
+
+  const hash = e ? new URL(e.destination.url).hash : location.hash;
+
+  waitForElement("#app").then((el) => {
+    el?.classList.toggle("ll-ccnd-peekable", config.peekOnBody);
+    el?.classList.toggle("ll-ccnd-perfmode", config.perfMode);
+  });
+
+  if (hash.includes("#/main")) {
+    if (hash.includes("/message")) {
+      waitForElement(".aio").then((el) => el?.classList.toggle("ll-ccnd-peekable", config.peekOnAIO));
+      waitForElement(".recent-contact").then((el) => el?.classList.toggle("ll-ccnd-peekable", config.peekOnContact));
+    }
+    if (hash.includes("/contact")) {
+      waitForElement(".contact-layout__content-area").then((el) => el?.classList.toggle("ll-ccnd-peekable", config.peekOnContact));
+      waitForElement(".contact-profile").then((el) => el?.classList.toggle("ll-ccnd-peekable", true));
+    }
+  }
+}

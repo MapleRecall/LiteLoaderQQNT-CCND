@@ -5,8 +5,8 @@ import initSideButton from "./scripts/renderer/sideButton.js";
 
 (async () => {
   await getConfig();
-  await initStyles();
-  await initSideButton();
+  initStyles();
+  initSideButton();
 })();
 
 export { onSettingWindowCreated };

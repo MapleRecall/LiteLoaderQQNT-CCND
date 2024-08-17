@@ -4,7 +4,6 @@ export default async (view) => {
   const config = await getConfig();
   view.innerHTML = await (await fetch(`local:///${LL_CCND.BASE_PATH}/src/settings.html`)).text();
 
-  // Initialize switch
   [...view.querySelectorAll("setting-switch")].forEach((input) => {
     const configName = input.dataset["config"];
     input.toggleAttribute("is-active", config[configName]);
@@ -13,6 +12,14 @@ export default async (view) => {
       event.target.toggleAttribute("is-active");
       config[configName] = event.target.hasAttribute("is-active");
       setConfig(config);
+    });
+  });
+
+  LL_CCND.onUpdate(async () => {
+    const config = await getConfig();
+    [...view.querySelectorAll("setting-switch")].forEach((input) => {
+      const configName = input.dataset["config"];
+      input.toggleAttribute("is-active", config[configName]);
     });
   });
 
