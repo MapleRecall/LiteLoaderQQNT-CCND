@@ -1,6 +1,7 @@
 {
     "enabled": false,
     "font": "KFC",
+    "avatarStyle": "1",
     "perfMode": false,
     "peekOnBody": false,
     "peekOnContact": true,

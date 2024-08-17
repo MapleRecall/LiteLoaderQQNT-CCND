@@ -59,6 +59,58 @@ body #app {
     }
   }
 
+  --avatar-mask-bg: linear-gradient(
+    30deg,
+    hsl(from var(--brand_standard) h 40% 50% / var(--avatar-mask-opacity)) 48%,
+    hsl(from var(--brand_standard) h 30% 65% / var(--avatar-mask-opacity)) 52%
+  );
+
+  &[data-ccnd-avatar="2"] {
+    --avatar-mask-bg: linear-gradient(
+      30deg,
+      hsl(from var(--brand_standard) h 70% 50% / var(--avatar-mask-opacity)) 20%,
+      hsl(from var(--brand_standard) h 45% 85% / var(--avatar-mask-opacity)) 80%
+    );
+  }
+
+  &[data-ccnd-avatar="3"] {
+    --avatar-mask-bg: hsl(from var(--brand_standard) h 50% 60% / var(--avatar-mask-opacity));
+  }
+
+  &[data-ccnd-avatar="4"] {
+    --avatar-mask-bg: hsl(from var(--brand_standard) h s l / var(--avatar-mask-opacity));
+  }
+
+  &[data-ccnd-avatar="5"] .avatar::after {
+    background-color: #aaa;
+    background-image: linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(-45deg, #ccc 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(-45deg, transparent 75%, #ccc 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+  }
+
+  &[data-ccnd-avatar="6"] .avatar::after {
+    background-color: #666;
+    background-image: linear-gradient(45deg, #888 25%, transparent 25%), linear-gradient(-45deg, #888 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #888 75%), linear-gradient(-45deg, transparent 75%, #888 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+  }
+
+  &[data-ccnd-avatar="7"] .avatar::after {
+    background: radial-gradient(
+      circle at bottom right,
+      hsl(from red h 70% 60% / var(--avatar-mask-opacity)) 0 27%,
+      hsl(from orange h 70% 60% / var(--avatar-mask-opacity)) 0 37.5%,
+      hsl(from yellow h 60% 60% / var(--avatar-mask-opacity)) 0 50%,
+      hsl(from green h 70% 60% / var(--avatar-mask-opacity)) 0 62.5%,
+      hsl(from darkturquoise h 70% 60% / var(--avatar-mask-opacity)) 0 75%,
+      hsl(from blue h 60% 60% / var(--avatar-mask-opacity)) 0 87.5%,
+      hsl(from indigo h 70% 60% / var(--avatar-mask-opacity)) 0
+    );
+    filter: blur(2px);
+  }
+
   .avatar {
     overflow: hidden;
 
@@ -69,11 +121,7 @@ body #app {
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        30deg,
-        hsl(from var(--brand_standard) h 30% 50% / var(--avatar-mask-opacity)) 48%,
-        hsl(from var(--brand_standard) h 30% 60% / var(--avatar-mask-opacity)) 52%
-      );
+      background: var(--avatar-mask-bg);
       mix-blend-mode: var(--avatar-mix-blend-mode);
       backdrop-filter: var(--avatar-filter);
       transition: 0.2s;

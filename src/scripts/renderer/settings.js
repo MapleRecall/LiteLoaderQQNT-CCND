@@ -25,7 +25,7 @@ export default async (view) => {
 
   [...view.querySelectorAll("setting-select")].forEach((input) => {
     const configName = input.dataset["config"];
-    input.querySelector(`[data-value="${config.font}"]`)?.click();
+    input.querySelector(`[data-value="${config[configName]}"]`)?.click();
 
     input.addEventListener("selected", async (event) => {
       config[configName] = event.detail.value;

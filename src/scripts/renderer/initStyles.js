@@ -47,6 +47,7 @@ async function updateClass(e) {
   waitForElement("#app").then((el) => {
     el?.classList.toggle("ll-ccnd-peekable", config.peekOnBody);
     el?.classList.toggle("ll-ccnd-perfmode", config.perfMode);
+    el && (el.dataset["ccndAvatar"] = config.avatarStyle);
   });
 
   if (hash.includes("#/main")) {
