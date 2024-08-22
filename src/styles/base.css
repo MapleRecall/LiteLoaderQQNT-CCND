@@ -111,6 +111,14 @@ body #app {
     filter: blur(2px);
   }
 
+  &[data-ccnd-avatar="8"] .avatar::after {
+    --avatar-mask-bg: linear-gradient(30deg, 
+      hsl(from var(--brand_standard) h 0% 0% / 0) 100%,
+      hsl(from var(--brand_standard) h 0% 0% / 0) 100%);
+    --avatar-mix-blend-mode: none;
+    --avatar-filter: blur(0px) saturate(1);
+  }
+
   .avatar {
     overflow: hidden;
 
