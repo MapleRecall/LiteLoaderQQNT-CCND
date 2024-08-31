@@ -5,7 +5,7 @@
     "name": "CanCanNeed",
     "slug": "CanCanNeed",
     "description": "担心窥屏和社死？快来试试这个吧！还能方便界面演示和截图，美观实用，混沌有趣。",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "thumb":"./static/images/icon.svg",
     "icon": "./static/images/icon.svg",
     "authors": [
@@ -28,7 +28,7 @@
         "repo": "MapleRecall/LiteLoaderQQNT-CCND",
         "branch": "main",
         "release": {
-            "tag": "0.2.0"
+            "tag": "0.3.0"
         }
     }
 }
