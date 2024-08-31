@@ -59,11 +59,21 @@ body #app {
     }
   }
 
-  --avatar-mask-bg: linear-gradient(
-    30deg,
-    hsl(from var(--brand_standard) h 40% 50% / var(--avatar-mask-opacity)) 48%,
-    hsl(from var(--brand_standard) h 30% 65% / var(--avatar-mask-opacity)) 52%
-  );
+  --avatar-mask-bg: none;
+
+  &[data-ccnd-avatar="0"] {
+    --avatar-mask-opacity: 0;
+    --avatar-filter: none;
+    --avatar-mix-blend-mode: normal;
+  }
+
+  &[data-ccnd-avatar="1"] {
+    --avatar-mask-bg: linear-gradient(
+      30deg,
+      hsl(from var(--brand_standard) h 70% 50% / var(--avatar-mask-opacity)) 20%,
+      hsl(from var(--brand_standard) h 45% 85% / var(--avatar-mask-opacity)) 80%
+    );
+  }
 
   &[data-ccnd-avatar="2"] {
     --avatar-mask-bg: linear-gradient(
@@ -111,14 +121,6 @@ body #app {
     filter: blur(2px);
   }
 
-  &[data-ccnd-avatar="8"] .avatar::after {
-    --avatar-mask-bg: linear-gradient(30deg, 
-      hsl(from var(--brand_standard) h 0% 0% / 0) 100%,
-      hsl(from var(--brand_standard) h 0% 0% / 0) 100%);
-    --avatar-mix-blend-mode: none;
-    --avatar-filter: blur(0px) saturate(1);
-  }
-
   .avatar {
     overflow: hidden;
 
@@ -143,7 +145,7 @@ body #app {
     }
   }
 
-  :is(.list-item, .group-user, .ml-item, .recent-contact-item) {
+  &:not([data-ccnd-avatar="0"]) :is(.list-item, .group-user, .ml-item, .recent-contact-item) {
     &:nth-child(n) {
       .avatar {
         filter: hue-rotate(-30deg);
