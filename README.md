@@ -17,6 +17,7 @@ https://github.com/MapleRecall/LiteLoaderQQNT-CCND/releases
 
 ## 字体混淆工具
 [Font-Messer](https://github.com/MapleRecall/Font-Messer)（初期预览版）所有预设均可以在这里找到
+[Font-Messer-For-LiteLoaderQQNT-CCND](https://github.com/SummerFleur2997/Font-Messer-For-LiteLoaderQQNT-CCND) （非官方版本）另一种使用 `Python` 生成混淆字体的脚本 (by [@SummerFleur2997](https://github.com/SummerFleur2997))
 
 
 ## 纯CSS版本
