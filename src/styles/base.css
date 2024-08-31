@@ -8,7 +8,7 @@ body #app {
   --avatar-mix-blend-mode: hard-light;
 
   --image-opacity: 0.8;
-  --image-filter: blur(10px) saturate(1.25);
+  --image-filter: blur(16px) saturate(1.25);
 
   &.ll-ccnd-perfmode {
     --avatar-mask-opacity: 1;
@@ -31,7 +31,16 @@ body #app {
     }
   }
 
-  :is(.text-ellipsis:not(.secondary-info), .text-normal, .msg-content-container, .group-notice .content, .gray-tip-action, .card-extra__postscript) {
+  :is(
+      .text-ellipsis:not(.secondary-info),
+      .text-normal,
+      .msg-content-container,
+      .group-notice .content,
+      .gray-tip-action,
+      .card-extra__postscript,
+      .title-bar__content,
+      .group-profile
+    ) {
     font-family: "Messed Sans Pro", sans-serif;
     animation: text-in-1 0.5s;
 
@@ -45,6 +54,7 @@ body #app {
   .list-item,
   .group-user,
   .ml-item,
+  .recent-contact-item,
   .sys-notify-card {
     &:hover {
       .text-ellipsis:not(.secondary-info),
@@ -52,7 +62,9 @@ body #app {
       .msg-content-container,
       .group-notice .content,
       .gray-tip-action,
-      .card-extra__postscript {
+      .card-extra__postscript,
+      .title-bar__content,
+      .group-profile {
         font-family: inherit;
         animation: text-in-2 0.5s;
       }
@@ -137,7 +149,7 @@ body #app {
       transition: 0.2s;
     }
 
-    :is(.ll-ccnd-peekable, .list-item, .group-user, .ml-item):hover &,
+    :is(.ll-ccnd-peekable, .list-item, .group-user, .ml-item, .recent-contact-item):hover &,
     &:hover {
       &::after {
         opacity: 0;
