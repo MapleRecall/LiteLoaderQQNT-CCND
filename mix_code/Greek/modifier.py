@@ -58,5 +58,5 @@ def geneXMLInfo():
     return xml_elements
 
 
-def StartGreek():
+if __name__ == "__main__":
     START("Greek", geneXMLInfo())

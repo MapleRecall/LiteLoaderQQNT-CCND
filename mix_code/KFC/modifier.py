@@ -24,5 +24,5 @@ def geneXMLInfo():
     return xml_elements
 
 
-def StartKFC():
+if __name__ == "__main__":
     START("KFC", geneXMLInfo())

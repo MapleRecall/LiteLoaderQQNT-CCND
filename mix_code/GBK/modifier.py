@@ -30,6 +30,6 @@ def geneXMLInfo():
     return xml_elements
 
 
-def StartGBK():
+if __name__ == "__main__":
     START("GBK", geneXMLInfo())
 

@@ -23,5 +23,5 @@ def geneXMLInfo():
     return xml_elements
 
 
-def StartEN():
+if __name__ == "__main__":
     START("EN", geneXMLInfo())

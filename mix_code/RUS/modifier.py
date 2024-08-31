@@ -29,5 +29,5 @@ def geneXMLInfo():
     return xml_elements
 
 
-def StartRUS():
+if __name__ == "__main__":
     START("RUS", geneXMLInfo())

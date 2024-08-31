@@ -34,5 +34,5 @@ def geneXMLInfo():
     return xml_elements
 
 
-def StartJP():
+if __name__ == "__main__":
     START("JP", geneXMLInfo())
