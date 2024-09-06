@@ -41,14 +41,13 @@
                         <setting-text data-type="secondary">选择你的喜欢的混淆风格</setting-text>
                     </div>
                     <setting-select class="selector" data-config="font">
-                        <setting-option data-value="">✔️ 不混淆</setting-option>
+                        <setting-option data-value="">不混淆</setting-option>
                         <setting-option data-value="Chaos" title="C H A O S">🌀 乱序映射</setting-option>
                         <setting-option data-value="KFC" title="🍟麦当劳">🍔 狂亂木曜日</setting-option>
-                        <setting-option data-value="KunJinKao" title="AMD全责">🐞 锟斤拷烫囤</setting-option>
-                        <setting-option data-value="Furry" title="😾小心福瑞控">🐶 ♡喵呜~汪oωo</setting-option>
-                        <setting-option data-value="JP" title="全是片假名谁看得懂啊">🎏 君は日本_が本当に上手</setting-option>
-                        <setting-option data-value="Geek" title="澤野弘之">💥 βios</setting-option>
-                        <setting-option data-value="RUS" title="苏卡不列！">🍺 Сука блядь</setting-option>
+                        <setting-option data-value="KunJinKao" title="AMD全责"> 锟斤拷</setting-option>
+                        <setting-option data-value="Furry" title="😾小心福瑞控">战雷</setting-option>
+                        <setting-option data-value="JP" title="片假名"> 異世界の伝説</setting-option>
+                        <setting-option data-value="Geek" title="澤野弘之">[数据删除]</setting-option>
                         <setting-option data-value="EN">🌐 ENGILHS</setting-option>
                     </setting-select>
                 </setting-item>
@@ -58,7 +57,6 @@
                         <setting-text data-type="secondary">选择头像遮罩的样式</setting-text>
                     </div>
                     <setting-select class="selector" data-config="avatarStyle">
-                        <setting-option data-value="0">不遮罩</setting-option>
                         <setting-option data-value="1">主色 - 清晰渐变</setting-option>
                         <setting-option data-value="2">主色 - 平缓渐变</setting-option>
                         <setting-option data-value="3">主色 - 清雅</setting-option>
@@ -66,6 +64,7 @@
                         <setting-option data-value="5">棋盘 - 亮</setting-option>
                         <setting-option data-value="6">棋盘 - 暗</setting-option>
                         <setting-option data-value="7">彩虹 - 🌈</setting-option>
+                        <setting-option data-value="8">无变化</setting-option>
                     </setting-select>
                 </setting-item>
                 <setting-item is-disabled>
@@ -89,21 +88,21 @@
             <setting-list data-direction="column">
                 <setting-item>
                     <div>
-                        <setting-text>快速概览主内容</setting-text>
-                        <setting-text data-type="secondary">鼠标在右侧主内容区时还原内容，方便聊天和查看通知等</setting-text>
+                        <setting-text>概览聊天框</setting-text>
+                        <setting-text data-type="secondary">鼠标在聊天区内时还原全部消息，方便聊天</setting-text>
                     </div>
                     <setting-switch data-config="peekOnAIO"></setting-switch>
                 </setting-item>
                 <setting-item>
                     <div>
-                        <setting-text>快速概览联系人</setting-text>
+                        <setting-text>概览联系人</setting-text>
                         <setting-text data-type="secondary">鼠标在最近联系列表中时还原全部列表，方便选取</setting-text>
                     </div>
                     <setting-switch data-config="peekOnContact"></setting-switch>
                 </setting-item>
                 <setting-item>
                     <div>
-                        <setting-text>快速概览窗口</setting-text>
+                        <setting-text>概览窗口</setting-text>
                         <setting-text data-type="secondary">鼠标在窗口内时还原整个窗口，会覆盖上面两个的设置</setting-text>
                     </div>
                     <setting-switch data-config="peekOnBody"></setting-switch>
