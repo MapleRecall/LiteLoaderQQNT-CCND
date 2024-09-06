@@ -57,11 +57,7 @@ async function updateClass(e) {
     }
     if (hash.includes("/contact")) {
       waitForElement(".contact-layout__content-area").then((el) => el?.classList.toggle("ll-ccnd-peekable", config.peekOnContact));
-      waitForElement(".contact-layout__right-area").then((el) => el?.classList.toggle("ll-ccnd-peekable", config.peekOnAIO));
+      waitForElement(".contact-profile").then((el) => el?.classList.toggle("ll-ccnd-peekable", true));
     }
-  }
-
-  if (hash.includes("#/forward") || hash.includes("#/record") ) {
-    waitForElement("#app").then((el) => el?.classList.toggle("ll-ccnd-peekable", config.peekOnAIO));
   }
 }

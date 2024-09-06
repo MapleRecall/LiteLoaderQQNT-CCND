@@ -8,7 +8,7 @@ body #app {
   --avatar-mix-blend-mode: hard-light;
 
   --image-opacity: 0.8;
-  --image-filter: blur(16px) saturate(1.25);
+  --image-filter: blur(10px) saturate(1.25);
 
   &.ll-ccnd-perfmode {
     --avatar-mask-opacity: 1;
@@ -31,16 +31,7 @@ body #app {
     }
   }
 
-  :is(
-      .text-ellipsis:not(.secondary-info),
-      .text-normal,
-      .msg-content-container,
-      .group-notice .content,
-      .gray-tip-action,
-      .card-extra__postscript,
-      .title-bar__content,
-      .group-profile
-    ) {
+  :is(.text-ellipsis:not(.secondary-info), .text-normal, .msg-content-container, .group-notice .content, .gray-tip-action, .card-extra__postscript) {
     font-family: "Messed Sans Pro", sans-serif;
     animation: text-in-1 0.5s;
 
@@ -54,39 +45,25 @@ body #app {
   .list-item,
   .group-user,
   .ml-item,
-  .recent-contact-item,
-  .sys-notify-card,
-  .record-msg-detail {
+  .sys-notify-card {
     &:hover {
       .text-ellipsis:not(.secondary-info),
       .text-normal,
       .msg-content-container,
       .group-notice .content,
       .gray-tip-action,
-      .card-extra__postscript,
-      .title-bar__content,
-      .group-profile {
+      .card-extra__postscript {
         font-family: inherit;
         animation: text-in-2 0.5s;
       }
     }
   }
 
-  --avatar-mask-bg: none;
-
-  &[data-ccnd-avatar="0"] {
-    --avatar-mask-opacity: 0;
-    --avatar-filter: none;
-    --avatar-mix-blend-mode: normal;
-  }
-
-  &[data-ccnd-avatar="1"] {
-    --avatar-mask-bg: linear-gradient(
-      30deg,
-      hsl(from var(--brand_standard) h 40% 50% / var(--avatar-mask-opacity)) 48%,
-      hsl(from var(--brand_standard) h 30% 65% / var(--avatar-mask-opacity)) 52%
-    );
-  }
+  --avatar-mask-bg: linear-gradient(
+    30deg,
+    hsl(from var(--brand_standard) h 40% 50% / var(--avatar-mask-opacity)) 48%,
+    hsl(from var(--brand_standard) h 30% 65% / var(--avatar-mask-opacity)) 52%
+  );
 
   &[data-ccnd-avatar="2"] {
     --avatar-mask-bg: linear-gradient(
@@ -134,6 +111,14 @@ body #app {
     filter: blur(2px);
   }
 
+  &[data-ccnd-avatar="8"] .avatar::after {
+    --avatar-mask-bg: linear-gradient(30deg, 
+      hsl(from var(--brand_standard) h 0% 0% / 0) 100%,
+      hsl(from var(--brand_standard) h 0% 0% / 0) 100%);
+    --avatar-mix-blend-mode: none;
+    --avatar-filter: blur(0px) saturate(1);
+  }
+
   .avatar {
     overflow: hidden;
 
@@ -150,7 +135,7 @@ body #app {
       transition: 0.2s;
     }
 
-    :is(.ll-ccnd-peekable, .list-item, .group-user, .ml-item, .recent-contact-item, .record-msg-detail):hover &,
+    :is(.ll-ccnd-peekable, .list-item, .group-user, .ml-item):hover &,
     &:hover {
       &::after {
         opacity: 0;
@@ -158,7 +143,7 @@ body #app {
     }
   }
 
-  &:not([data-ccnd-avatar="0"]) :is(.list-item, .group-user, .ml-item, .recent-contact-item, .record-msg-detail) {
+  :is(.list-item, .group-user, .ml-item, .recent-contact-item) {
     &:nth-child(n) {
       .avatar {
         filter: hue-rotate(-30deg);

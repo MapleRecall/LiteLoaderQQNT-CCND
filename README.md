@@ -6,18 +6,12 @@
 
 ## 安装方法
 
-* 方法1：使用 [插件列表查看](https://github.com/ltxhhz/LL-plugin-list-viewer) <br>
-搜索 Can Can Need 然后安装选择 `使用仓库代码包`
-
-* 方法2：下载release包，解压到插件目录<br>
+### 方法1：下载release包，解压到插件目录
 https://github.com/MapleRecall/LiteLoaderQQNT-CCND/releases
 
-* 方法3： 插件目录下直接git clone 本项目<br>
+### 方法2： 插件目录下直接git clone 本项目
+
 `git clone https://github.com/MapleRecall/LiteLoaderQQNT-CCND.git`
-
-## 字体混淆工具
-[Font-Messer](https://github.com/MapleRecall/Font-Messer)（初期预览版）所有预设均可以在这里找到
-
 
 ## 纯CSS版本
 https://github.com/MapleRecall/Transitio-user-css?#2-private-plus
